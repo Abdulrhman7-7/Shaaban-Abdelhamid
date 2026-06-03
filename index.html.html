@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صدقة جارية - شعبان عبدالحميد عتمان</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background: radial-gradient(circle at top,#081226,#020617);
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:50px 20px;
+  background:rgba(255,255,255,0.03);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+header h1{margin:0;font-size:36px;}
+header p{color:#cbd5e1;}
+
+/* CONTAINER */
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:20px;
+  margin:15px 0;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* TITLES */
+h2{
+  color:#fbbf24;
+  margin-top:0;
+}
+
+/* BUTTONS */
+button{
+  background:#22c55e;
+  border:none;
+  padding:12px 18px;
+  margin:5px;
+  border-radius:12px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{transform:scale(1.05);}
+
+.red{background:#ef4444;}
+.blue{background:#3b82f6;}
+
+/* QURAN BOX */
+.quran{
+  line-height:2;
+  font-size:18px;
+  color:#e2e8f0;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+
+/* FLOAT LIGHT EFFECT */
+.glow{
+  position:fixed;
+  width:200px;
+  height:200px;
+  background:rgba(34,197,94,0.1);
+  filter:blur(80px);
+  top:10%;
+  left:10%;
+  animation:move 10s infinite alternate;
+}
+
+@keyframes move{
+  from{transform:translate(0,0);}
+  to{transform:translate(100px,200px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<header>
+  <h1> صدقة جارية</h1>
+  <p>عن المرحوم شعبان عبدالحميد عتمان</p>
+</header>
+
+<div class="container">
+
+<!-- FAITH -->
+<div class="card">
+<h2>🌿 دعاء للمتوفي</h2>
+<p>
+اللهم اغفر له وارحمه، وعافه واعفُ عنه، وأكرم نزله، ووسع مدخله، ونقه من الذنوب والخطايا.
+</p>
+</div>
+
+<!-- QURAN -->
+<div class="card">
+<h2>📖 القرآن الكريم</h2>
+
+<div class="quran">
+
+<b>سورة الفاتحة</b><br>
+بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
+الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ<br>
+الرَّحْمَٰنِ الرَّحِيمِ<br>
+مَالِكِ يَوْمِ الدِّينِ<br>
+إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ<br>
+اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ<br>
+صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ<br>
+غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ<br><br>
+
+<b>سورة الإخلاص</b><br>
+قُلْ هُوَ اللَّهُ أَحَدٌ<br>
+اللَّهُ الصَّمَدُ<br>
+لَمْ يَلِدْ وَلَمْ يُولَدْ<br>
+وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ<br>
+
+</div>
+</div>
+
+<!-- DHIKR -->
+<div class="card">
+<h2>📿 الأذكار</h2>
+<ul style="line-height:2;color:#e2e8f0;">
+<li>سبحان الله وبحمده</li>
+<li>لا إله إلا الله</li>
+<li>استغفر الله العظيم</li>
+<li>اللهم صلِّ وسلم على نبينا محمد</li>
+</ul>
+</div>
+
+<!-- TASBEEH -->
+<div class="card">
+<h2>📿 التسبيح</h2>
+
+<button onclick="tasbeeh()">سبحان الله</button>
+<button onclick="istighfar()">استغفر الله</button>
+<button class="blue" onclick="salat()">صلِّ على النبي</button>
+<button class="red" onclick="resetAll()">إعادة</button>
+
+<div style="margin-top:10px;font-size:20px;color:#fbbf24;">
+التسبيح: <span id="t1">0</span> |
+الاستغفار: <span id="t2">0</span> |
+الصلاة على النبي: <span id="t3">0</span>
+</div>
+</div>
+
+</div>
+
+<footer>
+🤍 اللهم اجعل هذا العمل صدقة جارية عن الفقيد
+</footer>
+
+<script>
+
+let t1=0,t2=0,t3=0;
+
+function tasbeeh(){
+  t1++;
+  document.getElementById("t1").innerText=t1;
+}
+
+function istighfar(){
+  t2++;
+  document.getElementById("t2").innerText=t2;
+}
+
+function salat(){
+  t3++;
+  document.getElementById("t3").innerText=t3;
+}
+
+function resetAll(){
+  t1=t2=t3=0;
+  document.getElementById("t1").innerText=0;
+  document.getElementById("t2").innerText=0;
+  document.getElementById("t3").innerText=0;
+}
+
+</script>
+
+</body>
+</html>
